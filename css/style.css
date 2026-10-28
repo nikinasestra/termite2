@@ -1,0 +1,371 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+html,
+body,
+main {
+  background: #eef0df;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.hero {
+  position: relative;
+
+  width: 100vw;
+  height: 112vh;
+
+  background: #eef0df;
+
+  /* ничего не обрезаем */
+  overflow: visible;
+}
+
+
+.hero__top {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100vw;
+  height: auto;
+
+  display: block;
+  z-index: 10;
+}
+
+
+.hero__logo {
+  position: absolute;
+
+  top: 7vh;
+  left: 1.2vw;
+
+  width: 97.5vw;
+  height: auto;
+
+  display: block;
+
+  z-index: 5;
+}
+
+
+.hero__item {
+  position: absolute;
+
+  height: auto;
+  display: block;
+
+  z-index: 4;
+
+  will-change: transform;
+}
+
+
+.hero__item--1 {
+  top: 43vh;
+  left: 3vw;
+
+  width: 27vw;
+
+  animation: float-left 3.4s ease-in-out infinite alternate;
+}
+
+
+
+.hero__item--2 {
+  top: 45vh;
+  left: 36.5vw;
+
+  width: 26vw;
+
+  animation: float-center 3.8s ease-in-out -1.2s infinite alternate;
+}
+
+
+
+.hero__item--3 {
+  top: 44vh;
+  left: 70vw;
+
+  width: 27vw;
+
+  animation: float-right 3.6s ease-in-out -2s infinite alternate;
+}
+
+
+
+@keyframes float-left {
+  from {
+    transform: translateY(-0.45vh);
+  }
+
+  to {
+    transform: translateY(0.55vh);
+  }
+}
+
+@keyframes float-center {
+  from {
+    transform: translateY(0.5vh);
+  }
+
+  to {
+    transform: translateY(-0.6vh);
+  }
+}
+
+@keyframes float-right {
+  from {
+    transform: translateY(-0.55vh);
+  }
+
+  to {
+    transform: translateY(0.45vh);
+  }
+}
+
+
+
+.gallery-screen {
+  position: relative;
+
+  width: 100vw;
+  height: 105vh;
+
+  margin-top: 60vh;
+
+  background: #eef0df;
+  overflow: visible;
+}
+
+
+.gallery-screen__logo {
+  position: absolute;
+
+  top: -10vh;
+  left: 18vw;
+
+  width: 62vw;
+  height: auto;
+
+  display: block;
+
+  z-index: 3;
+}
+
+
+.gallery-screen__image {
+  position: absolute;
+
+  top: 29vh;
+  left: 4vw;
+
+  width: 86vw;
+  height: auto;
+
+  display: block;
+
+  z-index: 2;
+}
+
+
+.gallery-screen__small-logo {
+  position: absolute;
+
+  top: 110vh;
+  left: 5vw;
+
+  width: 15vw;
+  height: auto;
+
+  display: block;
+
+  z-index: 4;
+}
+
+
+.gallery-screen__button {
+  position: absolute;
+
+  top: 72vh;
+  right: 3vw;
+
+  width: 5vw;
+  height: auto;
+
+  padding: 0;
+  border: 0;
+  background: transparent;
+
+  cursor: pointer;
+
+  z-index: 10;
+
+  animation: arrow-hint 1.4s ease-in-out infinite;
+}
+
+.gallery-screen__button img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@keyframes arrow-hint {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(1.2vw);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.transform-screen {
+  position: relative;
+
+  width: 100vw;
+  height: 100vh;
+
+  /* такое же расстояние, как между 1 и 2 */
+  margin-top: 30vh;
+
+  background: #eef0df;
+  overflow: visible;
+}
+
+
+.transform-screen__logo {
+  position: absolute;
+
+  top: 26vh;
+  left: 1.5vw;
+
+  width: 97vw;
+  height: auto;
+
+  display: block;
+
+  z-index: 2;
+
+  will-change: transform;
+
+  animation:
+    transform-logo-float 3.7s ease-in-out infinite alternate;
+}
+
+
+
+.transform-screen__cover-wrap {
+  position: absolute;
+
+  top: 5vh;
+  left: 18vw;
+
+  width: 24vw;
+
+  z-index: 5;
+
+  will-change: transform;
+
+  animation:
+    transform-cover-float 3.2s ease-in-out -1s infinite alternate;
+}
+
+
+.transform-screen__cover {
+  width: 100%;
+  height: auto;
+
+  display: block;
+
+  /* наклон как в фигме */
+  transform: rotate(15deg);
+  transform-origin: center;
+}
+
+
+
+@keyframes transform-logo-float {
+  from {
+    transform: translateY(-0.45vh);
+  }
+
+  to {
+    transform: translateY(0.55vh);
+  }
+}
+
+
+@keyframes transform-cover-float {
+  from {
+    transform: translateY(0.55vh);
+  }
+
+  to {
+    transform: translateY(-0.55vh);
+  }
+}
+
+
+.footer-screen {
+  position: relative;
+
+  width: 100vw;
+  height: 100vh;
+
+  margin-top: var(--screen-gap);
+
+  background: #eef0df;
+  overflow: hidden;
+}
+
+.footer-screen__pic {
+  position: absolute;
+
+  left: 1.5vw;
+  bottom: 2vh;
+
+  width: 48vw;
+  height: auto;
+
+  display: block;
+
+  z-index: 2;
+}
+
+
+.footer-screen__text {
+  position: absolute;
+
+  right: 1.5vw;
+  bottom: 2vh;
+
+  width: 54vw;
+  height: auto;
+
+  display: block;
+
+  z-index: 3;
+}
+
+
+
+
+
+
